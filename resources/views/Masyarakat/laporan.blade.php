@@ -20,11 +20,14 @@
             <a class="nav-link active" aria-current="page" href="{{url('masyarakat/dashboard')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Laporan</a>
+            <a class="nav-link active" aria-current="page" href="{{url('masyarakat/laporan')}}">Laporan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('masyarakat/validasi')}}">Validasi</a>
           </li>
         </ul>
     <form class="d-flex" role="search">
-      <button class="btn btn-outline-light" type="submit">Logout</button>
+      <a class="btn btn-outline-light" href="{{url('masyarakat/dashboard')}}" role="button">Logout</a>
     </form>
   </div>
 </div>

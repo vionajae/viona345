@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <style>
+    
     h2{
         color: black;
         font-size: 30px;
@@ -21,6 +22,9 @@
         display: flex;
         justify-content: center;
         padding: 50px 0 100px 0;
+    }
+    card-body{
+      margin-right: 50px;
     }
 </style>
 
@@ -40,7 +44,7 @@
                 <a class="nav-link active" aria-current="page" href="{{url('masyarakat/laporan')}}">Laporan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('masyarakat/validasid')}}">Validasi</a>
+                <a class="nav-link active" aria-current="page" href="{{url('masyarakat/validasi')}}">Validasi</a>
               </li>
             </ul>
         <form class="d-flex" role="search">
@@ -59,6 +63,25 @@
                 
                 <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2>
                 <h4>Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang</h4>
+                <div class="row">
+                <div class="card text-bg-primary col-sm-2 mb-3 mb-sm-0">
+                <div class="card-body">
+                <h5 class="card-title">TOTAL ADUAN</<h5>
+                <p class="card-text">457</p>
+                </div>
+                </div>
+                <div class="card text-bg-primary col-sm-2 mb-3 mb-sm-0">
+                <div class="card-body">
+                <h5 class="card-title">ADUAN DALAM PROSES</h5>
+                <p class="card-text">53</p>
+                </div>
+                </div>
+                <div class="card text-bg-primary col-sm-2 mb-3 mb-sm-0">
+                <div class="card-body">
+                <h5 class="card-title">ADUAN SELESAI</h5>
+                <p class="card-text">404</p>
+                </div>
+                </div>
             </form>
         </div>
     </div>

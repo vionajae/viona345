@@ -53,11 +53,34 @@ class MasyarakatController extends Controller
         $m = new Masyarakat();
         $cek = $request->validate([
             'nik'=>'required|unique:masyarakat|max:16',
-            'isilaporan'=>'required|min:10'
+            'nama'=>'required|max:16',
+            'foto'=>'required',
+            'isi_laporan'=>'required|min:50',
+            'tanggal'=>'required|max:15'
         ]);
         $m->create($request->all());
 
         return back()->with('pesan','Selamat, laporan berhasil');
+    
+    }
+    public function dashboard(){
+        return view('masyarakat.dashboard');
+    }
+    public function validasi(){
+        return view('masyarakat.laporan');
+    }
+    public function cekValidasi(Request $request){
+        $m = new Masyarakat();
+        $cek = $request->validate([
+            'nik'=>'required|unique:masyarakat|max:16',
+            'nama'=>'required|max:16',
+            'foto'=>'required',
+            'isi_laporan'=>'required|min:50',
+            'tanggal'=>'required|max:15'
+        ]);
+        $m->create($request->all());
+
+        return back()->with('pesan','Selamat, validasi berhasil');
     
     }
 

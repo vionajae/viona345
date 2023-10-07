@@ -45,7 +45,7 @@
             </ul>
         <form class="d-flex" role="search">
             <a class="btn btn-outline-light" href="{{url('masyarakat/login')}}" role="button">Login</a>
-            <a class="btn btn-outline-light" href="{{url('masyarakat/dashboard')}}" role="button">Logout</a>
+            <a class="btn btn-outline-light" href="{{url('masyarakat/registrasi')}}" role="button">Daftar</a>
         </form>
       </div>
     </div>

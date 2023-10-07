@@ -34,3 +34,5 @@ Route::get('masyarakat/dashboard',[MasyarakatController::class,'dashboard']);
 
 Route::get('masyarakat/validasi',[MasyarakatController::class,'validasi']);
 Route::post('masyarakat/validasi',[MasyarakatController::class,'cekValidasi']);
+
+Route::get('/');

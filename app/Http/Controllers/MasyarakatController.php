@@ -67,7 +67,7 @@ class MasyarakatController extends Controller
         return view('masyarakat.dashboard');
     }
     public function validasi(){
-        return view('masyarakat.laporan');
+        return view('masyarakat.validasi');
     }
     public function cekValidasi(Request $request){
         $m = new Masyarakat();

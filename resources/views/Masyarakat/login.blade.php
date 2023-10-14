@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
             <div class="card shadow m-auto" style="width: 400px;">
                 <div class="card-body">
                     <h4 class="h4">LOGIN</h4>
-
+                    
                     @if (session('pesan'))
                     <div class="alert alert-success" role="alert">
                         {{session('pesan')}}

@@ -33,7 +33,7 @@
         <div class="card shadow mt-4">
             <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
                 <h4 class="card-title">Laporkan laporan anda</h4>
-                <a href="{{url('masyarakat/pengaduan')}}" >
+                <a href="{{url('masyarakat/tanggapan')}}" >
                 </a>
             </div>
             <div class="card-body">
@@ -45,37 +45,37 @@
                 <form action="" method="post">
                     @csrf
                     <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">NIK</label>
+                        <label for="" class="col-form-label col-2">Id tanggapan</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="nik">
+                            <input type="text" class="form-control" name="id_tanggapan">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Nama</label>
+                        <label for="" class="col-form-label col-2">Id Pengaduan</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="nama">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                      <label for="formFile" class="col-form-label col-2">Foto</label>
-                      <div class="col-10">
-                        <input class="form-control" type="file" id="formFile">
-                      </div>
-                  </div>
-                    <div class="mb-3 row">
-                        <label for="text" class="col-form-label col-2">Isi Laporan</label>
-                        <div class="col-10">
-                            <textarea class="form-control" name="isi_laporan" rows="5"></textarea>
+                            <input type="text" class="form-control" name="id_pengaduan">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="text" class="col-form-label col-2">Tanggal</label>
                         <div class="col-10">
-                            <input type="date" class="form-control" name="tanggal">
+                            <input type="date" class="form-control" name="tgl_tanggapan">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="" class="col-form-label col-2">Tanggapan</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" name="tanggapan">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="" class="col-form-label col-2">Id Petugas</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" name="id_petugas">
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button">Laporkan</button>
+                        <button class="btn btn-primary" type="button">Tanggapi</button>
                       </div>
                 </form>
             </div>

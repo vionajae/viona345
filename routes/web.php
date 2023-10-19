@@ -30,16 +30,15 @@ Route::post('masyarakat/login',[MasyarakatController::class,'cekLogin']);
 Route::get('masyarakat/pengaduan',[MasyarakatController::class,'pengaduan']);
 Route::post('masyarakat/pengaduan',[MasyarakatController::class,'cekPengaduan']);
 
-Route::get('masyarakat/dashboard',[MasyarakatController::class,'dashboard']);
 
-Route::get('masyarakat/admindash',[MasyarakatController::class,'admindash']);
+//admin
+Route::get('admin/validasi',[MasyarakatController::class,'validasi']);
+Route::post('admin/validasi',[MasyarakatController::class,'cekValidasi']);
 
-Route::get('masyarakat/validasi',[MasyarakatController::class,'validasi']);
-Route::post('masyarakat/validasi',[MasyarakatController::class,'cekValidasi']);
+Route::get('masyarakat/tanggapan',[MasyarakatController::class,'tanggapan']);
+Route::post('masyarakat/tanggapan',[MasyarakatController::class,'cekTanggapan']);
 
-Route::get('/');
-
-Route::get('masyarakat/petugas',[MasyarakatController::class,'petugas']);
-Route::post('masyarakat/petugas',[MasyarakatController::class,'cekPetugas']);
+Route::get('petugas',[MasyarakatController::class,'petugas']);
+Route::post('petugas',[MasyarakatController::class,'cekPetugas']);
 
 Route::get('LayoutUtama',[MasyarakatController::class,'LayoutUtama']);

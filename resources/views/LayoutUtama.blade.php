@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Layout Utama</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <style>
@@ -39,6 +39,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('masyarakat/pengaduan')}}">Pengaduan</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('masyarakat/validasi')}}">Validasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('petugas')}}">Petugas</a>
+              </li>
             </ul>
         <form class="d-flex" role="search">
           <div class="d-grid gap-2 d-md-block">
@@ -54,9 +60,9 @@
         <div class="bg-gradient justify-content-between">
         </div>
         <div class="card-body">
-            <form action="" method="post"><br><br><br>
-                <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2>
-                <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4><br><br><br>
+            <form action="" method="post"><br><br><br><br><br>
+                <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2><br>
+                <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4><br><br><br><br><br>
             </form>
         </div>
     </div>

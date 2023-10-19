@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validasi</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
 </head>
 <body class="bg-body-secondary">
     <div class="container">
         <div class="card shadow mt-4">
             <div class="bg-gradient justify-content-between">
-                <a href="{{url('masyarakat/laporan')}}" >
+                <a href="{{url('admin/validasi')}}" >
                 </a>
             </div>
             <div class="card-body">
@@ -42,7 +42,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>001</td>
+                                    <td>001d</td>
                                     <td>Jaja</td>
                                     <td>asdfg</td>
                                     <td>ahjumma ahjussi</td>

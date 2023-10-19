@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class MasyarakatController extends Controller
 {
+    public function index(){
+        return view('masyarakat.registrasi');
+    }  
     public function registrasi(){
         return view('masyarakat.registrasi');
     }  
@@ -71,17 +74,13 @@ class MasyarakatController extends Controller
         return view('LayoutUtama');
     }
 
-    public function admindash(){
-        return view('masyarakat.admindash');
-    }
-
     public function validasi(){
-        return view('masyarakat.validasi');
+        return view('Admin.validasi');
     }
     public function cekValidasi(Request $request){
         $m = new Masyarakat();
         $cek = $request->validate([
-            'nik'=>'required|unique:tanggapan|max:16',
+            'nik'=>'required|unique:validasi|max:16',
             'nama'=>'required|max:16',
             'foto'=>'required',
             'isi_laporan'=>'required|min:50',
@@ -93,7 +92,7 @@ class MasyarakatController extends Controller
     
     }
     public function petugas(){
-        return view('masyarakat.petugas');
+        return view('Petugas.petugas');
     }
     public function cekPetugas(Request $request){
         $m = new Masyarakat();
@@ -109,7 +108,22 @@ class MasyarakatController extends Controller
         return back()->with('pesan','Selamat, validasi berhasil');
     
     }
+    public function tanggapan(){
+        return view('masyarakat.tanggapan');
+    }
+    public function cekTanggapan(Request $request){
+        $m = new Masyarakat();
+        $cek = $request->validate([
+            'id_tanggapan'=>'required|unique:tanggapan|max:16',
+            'id_pengaduan'=>'required|max:16',
+            'tgl_tanggapan'=>'required',
+            'id_petugas'=>'required|min:3'
+        ]);
+        $m->create($request->all());
 
+        return back();
+    
+    }
 
 }
 

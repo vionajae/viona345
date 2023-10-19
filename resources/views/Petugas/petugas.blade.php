@@ -13,7 +13,7 @@
             <div class="card shadow m-auto" style="width: 1000px;">
                 <div class="card-body">
                 <h4 class="card-title">Login</h4>
-                <a href="{{url('masyarakat/petugas')}}" >
+                <a href="{{url('petugas')}}" >
                 </a>
             </div>
             <div class="card-body">

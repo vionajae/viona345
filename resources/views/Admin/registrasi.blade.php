@@ -13,7 +13,7 @@
             <div class="card shadow m-auto" style="width: 1000px;">
                 <div class="card-body">
                 <h4 class="card-title">Login</h4>
-                <a href="{{url('petugas')}}" >
+                <a href="{{url('admin/petugas')}}" >
                 </a>
             </div>
             <div class="card-body">
@@ -29,30 +29,55 @@
                         <label for="" class="col-form-label col-2">Id Petugas</label>
                         <div class="col-10">
                             <input type="number" class="form-control" name="id_petugas">
+                            @error('id_petugas')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Nama Petugas</label>
                         <div class="col-10">
                             <input type="text" class="form-control" name="nama_petugas">
+                            @error('nama_petugas')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Username</label>
                         <div class="col-10">
                             <input type="text" class="form-control" name="username">
+                            @error('username')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Password</label>
                         <div class="col-10">
                             <input type="text" class="form-control" name="nama_petugas">
+                            @error('password')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Telepon</label>
                         <div class="col-10">
                             <input type="text" class="form-control" name="telp">
+                            @error('telp')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -62,6 +87,11 @@
                           <option>Admin</option>
                           <option>Petugas</option>
                         </select>
+                        @error('level')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3">

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
+use App\Models\Pengaduan;
+use App\Models\Petugas;
+use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 
 class MasyarakatController extends Controller
@@ -12,7 +15,11 @@ class MasyarakatController extends Controller
     }  
     public function registrasi(){
         return view('masyarakat.registrasi');
-    }  
+    }
+
+    public function layoutmasyarakat(){
+        return view('masyarakat.layoutmasyarakat');
+    }
         
     public function simpan(Request $request){
         $satu = new Masyarakat();
@@ -34,7 +41,7 @@ class MasyarakatController extends Controller
         ]);
         $satu->create($request->all());
         if ($satu->where('nik',$request->input('nik'))->where('username',$request->input('username'))->exists()){
-            return redirect('masyarakat/dashboard');
+            return redirect('layoutmasyarakat');
         }
         return back()->with('pesan','registrasi gagal');
     }
@@ -46,29 +53,40 @@ class MasyarakatController extends Controller
         $m = new Masyarakat();
         // cek username dan password exist (ada) di tabel masyarakat
         if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('masyarakat/dashboard');
+            return redirect('layoutmasyarakat');
+        }
+        return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
+    }
+
+    //admin
+    public function adminlogin(){
+        return view('admin.login');
+    }  
+    public function cekadminlogin(Request $request){
+        $m = new Petugas();
+        if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
+            return redirect('LayoutUtama');
         }
         return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
     } 
 
+    public function indexpengaduan(){
+        return view('masyarakat.pengaduan');
+    }
     public function pengaduan(){
         return view('masyarakat.pengaduan');
     }
     public function cekPengaduan(Request $request){
-        $m = new Masyarakat();
+        $m = new Pengaduan();
         $cek = $request->validate([
             'id_pengaduan'=>'required|unique:pengaduan|max:10',
             'nik'=>'required|unique:pengaduan|max:16',
             'nama'=>'required|max:16',
-            'foto'=>'required',
+            'foto'=>'unique',
             'isi_laporan'=>'required|min:10',
             'tanggal'=>'required|max:15'
         ]);
-        $m->create($request->all());
-        if ($m->where('id_pengaduan',$request->input('id_pengaduan'))->exists()){
-            return redirect('masyarakat/validasi');
-        }
-        return back()->with('pesan','Selamat, laporan berhasil');
+        return back()->with('pesan','Selamat, pengaduan terkirim');
     }
     public function LayoutUtama(){
         return view('LayoutUtama');
@@ -91,11 +109,14 @@ class MasyarakatController extends Controller
         return back()->with('pesan','Selamat, validasi berhasil');
     
     }
-    public function petugas(){
-        return view('Petugas.petugas');
+    public function petugasatu(){
+        return view('admin.petugas');
+    }
+    public function registrasiadmin(){
+        return view('admin.registrasi');
     }
     public function cekPetugas(Request $request){
-        $m = new Masyarakat();
+        $m = new Petugas();
         $cek = $request->validate([
             'nama_petugas'=>'required|max:16',
             'username'=>'required|min:6',
@@ -109,10 +130,10 @@ class MasyarakatController extends Controller
     
     }
     public function tanggapan(){
-        return view('masyarakat.tanggapan');
+        return view('admin.tanggapan');
     }
     public function cekTanggapan(Request $request){
-        $m = new Masyarakat();
+        $m = new Tanggapan();
         $cek = $request->validate([
             'id_tanggapan'=>'required|unique:tanggapan|max:16',
             'id_pengaduan'=>'required|max:16',
@@ -123,6 +144,10 @@ class MasyarakatController extends Controller
 
         return back();
     
+    }
+    public function logout(){
+        session()->flush();
+        return back();
     }
 
 }

@@ -15,14 +15,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('masyarakat/dashboard')}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Laporan</a>
-          </li>
-        </ul>
+        ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/tanggapan')}}">Tanggapan</a>
+              </li>
+            </ul>
     <form class="d-flex" role="search">
       <button class="btn btn-outline-light" type="submit">Logout</button>
     </form>
@@ -32,7 +32,7 @@
     <div class="container">
         <div class="card shadow mt-4">
             <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
-                <h4 class="card-title">Laporkan laporan anda</h4>
+                <h4 class="card-title">Tanggapi laporan</h4>
                 <a href="{{url('masyarakat/tanggapan')}}" >
                 </a>
             </div>

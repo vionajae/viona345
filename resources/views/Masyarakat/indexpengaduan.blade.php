@@ -14,7 +14,6 @@
             <tr>
                 <th>Id Pengaduan</th>
                 <th>Nik</th>
-                <th>Nama</th>
                 <th>foto</th>
                 <th>Isi Laporan</th>
                 <th>Tanggal</th>
@@ -23,12 +22,10 @@
         <tbody>
             @foreach ($bebis as $inem)
                 <tr>
-                    <td>{{$inem->id_pengaduan}}</td>
                     <td>{{$inem->nik}}</td>
-                    <td>{{$inem->nama}}</td>
                     <td>{{$inem->foto}}</td>
                     <td>{{$inem->isi_laporan}}</td>
-                    <td>{{$inem->tanggal}}</td>
+                    <td>{{$inem->tgl_pengaduan}}</td>
                 </tr>
             @endforeach
         </tbody>

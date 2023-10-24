@@ -48,7 +48,7 @@ Route::post('admin/login',[MasyarakatController::class,'cekadminlogin']);
 Route::get('admin',[MasyarakatController::class,'petugasatu']);
 
 Route::get('admin/registrasi',[MasyarakatController::class,'registrasiadmin']);
-Route::post('admin/simpan',[MasyarakatController::class,'simpanadmin']);
+Route::post('admin/registrasi',[MasyarakatController::class,'simpanadmin']);
 
 Route::get('admin/validasi',[MasyarakatController::class,'validasi']);
 Route::post('admin/validasi',[MasyarakatController::class,'cekValidasi']);

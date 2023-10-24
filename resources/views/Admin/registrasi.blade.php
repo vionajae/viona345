@@ -12,8 +12,8 @@
         <div class="container">
             <div class="card shadow m-auto" style="width: 1000px;">
                 <div class="card-body">
-                <h4 class="card-title">Login</h4>
-                <a href="{{url('admin/petugas')}}" >
+                <h4 class="card-title">Registrasi</h4>
+                <a href="{{url('admin/registrasi')}}" >
                 </a>
             </div>
             <div class="card-body">
@@ -25,17 +25,6 @@
                     
                 <form action="" method="post">
                     @csrf
-                    <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Id Petugas</label>
-                        <div class="col-10">
-                            <input type="number" class="form-control" name="id_petugas">
-                            @error('id_petugas')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Nama Petugas</label>
                         <div class="col-10">
@@ -61,7 +50,7 @@
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Password</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="nama_petugas">
+                            <input type="text" class="form-control" name="password">
                             @error('password')
                                 <div class="form-text">
                                     {{$message}}

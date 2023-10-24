@@ -34,11 +34,11 @@
             </div>
             <div class="card-body">
                 @if (session('pesan'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{session('pesan')}}
                       </div>
                     @endif
-                <form action="" method="post">
+                <form action="{{url('masyarakat/pengaduan')}}" method="post">
                     @csrf
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">NIK</label>
@@ -51,21 +51,11 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Nama</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" name="nama">
-                            @error('nama')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
+                    
                     <div class="mb-3 row">
                       <label for="formFile" class="col-form-label col-2">Foto</label>
                       <div class="col-10">
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" name="foto" type="file" id="formFile">
                         @error('foto')
                                 <div class="form-file">
                                     {{$message}}
@@ -87,7 +77,7 @@
                     <div class="mb-3 row">
                         <label for="text" class="col-form-label col-2">Tanggal</label>
                         <div class="col-10">
-                            <input type="date" class="form-control" name="tanggal">
+                            <input type="date" class="form-control" name="tgl_pengaduan">
                             @error('tanggal')
                                 <div class="form-text">
                                     {{$message}}

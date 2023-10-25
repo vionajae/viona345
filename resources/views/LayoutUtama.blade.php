@@ -34,15 +34,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('LayoutUtama')}}">Home</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('masyarakat/petugas')}}">Tanggapan</a>
+                <a class="nav-link active" aria-current="page" href="{{url('admin/petugas')}}">Tanggapan</a>
               </li>
             </ul>
         <form class="d-flex" role="search">
           <div class="d-grid gap-2 d-md-block">
             <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Login</a>
+            <a class="btn btn-outline-light" href="{{url('admin/registrasi')}}" role="button">Register</a>
             <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Logout</a>
           </div>
         </form>

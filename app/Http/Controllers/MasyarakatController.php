@@ -69,10 +69,6 @@ class MasyarakatController extends Controller
         }
         return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
     } 
-
-    public function indexpengaduan(){
-        return view('masyarakat.pengaduan');
-    }
     public function pengaduan(){
         return view('masyarakat.pengaduan');
     }
@@ -80,10 +76,9 @@ class MasyarakatController extends Controller
         $m = new Pengaduan();
         // $cek = $request->validate([
         //     'nik'=>'required|max:16',
-        //     'nama'=>'required|max:16',
         //     'foto'=>'unique',
         //     'isi_laporan'=>'required|min:10',
-        //     'tanggal'=>'required|max:15'
+        //     'tgl_pengaduan'=>'unique'
         // ]);
         $m->create($request->all());
         return back()->with('pesan','Selamat, pengaduan terkirim');
@@ -93,16 +88,16 @@ class MasyarakatController extends Controller
     }
 
     public function validasi(){
-        return view('Admin.validasi');
+        $m = new Pengaduan();
+        return view('Admin.validasi',['data'=>$m->all()]);
     }
     public function cekValidasi(Request $request){
-        $m = new Masyarakat();
+        $m = new Pengaduan();
         $cek = $request->validate([
-            'nik'=>'required|unique:validasi|max:16',
-            'nama'=>'required|max:16',
-            'foto'=>'required',
-            'isi_laporan'=>'required|min:50',
-            'tanggal'=>'required|max:15'
+            'nik'=>'required|max:16',
+            'foto'=>'unique',
+            'isi_laporan'=>'required|min:10',
+            'tgl_pengaduan'=>'unique'
         ]);
         $m->create($request->all());
 

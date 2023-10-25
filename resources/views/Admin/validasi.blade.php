@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
 </head>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">LAPORIN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('LayoutUtama')}}">Home</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('masyarakat/petugas')}}">Tanggapan</a>
+          </li>
+        </ul>
+    <form class="d-flex" role="search">
+      <div class="d-grid gap-2 d-md-block">
+        <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Login</a>
+        <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Logout</a>
+      </div>
+    </form>
+  </div>
+</div>
+</nav>
 <body class="bg-body-secondary">
     <div class="container">
         <div class="card shadow mt-4">
@@ -33,44 +60,20 @@
                             <thead>
                                 <tr>
                                     <th>NIK</th>
-                                    <th>Nama</th>
                                     <th>Foto</th>
                                     <th>Isi Laporan</th>
                                     <th>Tanggal</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $inem)
                                 <tr>
-                                    <td>001d</td>
-                                    <td>Jaja</td>
-                                    <td>asdfg</td>
-                                    <td>ahjumma ahjussi</td>
-                                    <td>03/04/2023</td>
-                                    <td >
-                                        <a href="#" class="btn btn-success btn-sm">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </a>
-                                    </td>
+                                    <td>{{$inem->nik}}</td>
+                                    <td>{{$inem->foto}}</td>
+                                    <td>{{$inem->isi_laporan}}</td>
+                                    <td>{{$inem->tgl_pengaduan}}</td>
                                 </tr>
-                                <tr>
-                                    <td>002</td>
-                                    <td>Jaji</td>
-                                    <td>asdf</td>
-                                    <td>sajangnim</td>
-                                    <td>03/04/2023</td>
-                                    <td >
-                                        <a href="#" class="btn btn-success btn-sm">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

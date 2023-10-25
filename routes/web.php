@@ -29,8 +29,6 @@ Route::post('masyarakat/simpan',[MasyarakatController::class,'simpan']);
 Route::get('masyarakat/login',[MasyarakatController::class,'login']);
 Route::post('masyarakat/login',[MasyarakatController::class,'cekLogin']);
 
-Route::get('masyarakatsatu',[MasyarakatController::class,'indexpengaduan']);
-
 Route::get('masyarakat/pengaduan',[MasyarakatController::class,'pengaduan']);
 Route::post('masyarakat/pengaduan',[MasyarakatController::class,'cekPengaduan']);
 

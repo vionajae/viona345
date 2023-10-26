@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan</title>
+    <title>Tanggapan</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
@@ -19,12 +19,6 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('LayoutUtama')}}">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('admin/tanggapan')}}">Tanggapan</a>
-              </li>
             </ul>
     <form class="d-flex" role="search">
       <button class="btn btn-outline-light" type="submit">Logout</button>
@@ -36,7 +30,7 @@
         <div class="card shadow mt-4">
             <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
                 <h4 class="card-title">Tanggapi laporan</h4>
-                <a href="{{url('masyarakat/tanggapan')}}" >
+                <a href="{{url('admin/tanggapan')}}" >
                 </a>
             </div>
             <div class="card-body">
@@ -48,37 +42,29 @@
                 <form action="" method="post">
                     @csrf
                     <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Id tanggapan</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" name="id_tanggapan">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Id Pengaduan</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" name="id_pengaduan">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
                         <label for="text" class="col-form-label col-2">Tanggal</label>
                         <div class="col-10">
                             <input type="date" class="form-control" name="tgl_tanggapan">
+                            @error('tanggal')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Tanggapan</label>
+                        <label for="text" class="col-form-label col-2">Tanggapan</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="tanggapan">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="" class="col-form-label col-2">Id Petugas</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" name="id_petugas">
+                            <textarea class="form-control" name="tanggapan" rows="5"></textarea>
+                            @error('tanggapan')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="button">Tanggapi</button>
+                        <button class="btn btn-primary" type="submit">Tanggapi</button>
                       </div>
                 </form>
             </div>

@@ -21,13 +21,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('masyarakat/petugas')}}">Tanggapan</a>
-          </li>
         </ul>
     <form class="d-flex" role="search">
       <div class="d-grid gap-2 d-md-block">
-        <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Login</a>
         <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Logout</a>
       </div>
     </form>
@@ -51,9 +47,7 @@
                     @csrf
                     <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
                         <h4 class="card-title">Data</h4>
-                        <a href="" class="btn btn-light">
-                            <i class="bi bi-plus-circle-fill"></i> Tambah
-                        </a>
+                        
                     </div>
                     <div class="card-body">
                         <table class="table table-sm table-striped table-bordered">
@@ -63,15 +57,21 @@
                                     <th>Foto</th>
                                     <th>Isi Laporan</th>
                                     <th>Tanggal</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $inem)
                                 <tr>
                                     <td>{{$inem->nik}}</td>
-                                    <td>{{$inem->foto}}</td>
+                                    <td><img src="/upload_data/{{$inem->foto}}" alt="" style="width: 50px"></td>
                                     <td>{{$inem->isi_laporan}}</td>
                                     <td>{{$inem->tgl_pengaduan}}</td>
+                                    <td>                                   
+                                        <a href="{{url('admin/tanggapan')}}" class="btn btn-primary">
+                                        <i class="bi bi-plus-circle-fill"></i> Tanggapi
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

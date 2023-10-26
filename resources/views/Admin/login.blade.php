@@ -26,7 +26,7 @@
                       </div>
                     @endif
 
-                    <form action="{{url('masyarakat/login')}}" method="post">
+                    <form action="{{url('admin/login')}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
@@ -49,6 +49,7 @@
                         <div class="mb-3">
                             <button class="btn form-control btn-primary mb-2">Login</button>
                             <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
+                            <a class="" href="{{url('admin/registrasi')}}" role="button">Belum punya akun? Register</a>
                         </div>
                     </form>
                 </div>

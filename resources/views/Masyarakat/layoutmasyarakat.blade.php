@@ -37,8 +37,6 @@
               </ul>
         <form class="d-flex" role="search">
           <div class="d-grid gap-2 d-md-block">
-            <a class="btn btn-outline-light" href="{{url('masyarakat/login')}}" role="button">Login</a>
-            <a class="btn btn-outline-light" href="{{url('masyarakat/registrasi')}}" role="button">Register</a>
             <a class="btn btn-outline-light" href="{{url('masyarakat/login')}}" role="button">Logout</a>
           </div>
         </form>
@@ -53,7 +51,7 @@
         <div class="card-body">
             <form action="" method="post"><br><br><br>
                 <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2>
-                <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4><br>
+                <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4>
                 <div class="d-grid gap-2 col-3 mx-auto">
                   <a class="btn btn-primary" href="{{url('masyarakat/pengaduan')}}" role="button">Buat Pengaduan</a>
                 </div>

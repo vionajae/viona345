@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Middleware\MasyarakatMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -36,20 +37,20 @@ Route::post('masyarakat/pengaduan',[MasyarakatController::class,'cekPengaduan'])
 Route::get('logout',[MasyarakatController::class,'logout']);
 
 // layout
-Route::get('LayoutUtama',[MasyarakatController::class,'LayoutUtama']);
 Route::get('layoutmasyarakat',[MasyarakatController::class,'layoutmasyarakat']);
 
+Route::get('LayoutUtama',[AdminController::class,'LayoutUtama']);
+
+
 //admin
-Route::get('admin/login',[MasyarakatController::class,'adminlogin']);
-Route::post('admin/login',[MasyarakatController::class,'cekadminlogin']);
+Route::get('admin/login',[AdminController::class,'adminlogin']);
+Route::post('admin/login',[AdminController::class,'cekadminlogin']);
 
-Route::get('admin',[MasyarakatController::class,'petugasatu']);
+Route::get('admin/registrasi',[AdminController::class,'registrasiadmin']);
+Route::post('admin/registrasi',[AdminController::class,'simpanadmin']);
 
-Route::get('admin/registrasi',[MasyarakatController::class,'registrasiadmin']);
-Route::post('admin/registrasi',[MasyarakatController::class,'simpanadmin']);
-
-Route::get('admin/validasi',[MasyarakatController::class,'validasi']);
-Route::post('admin/validasi',[MasyarakatController::class,'cekValidasi']);
+Route::get('admin/validasi',[AdminController::class,'validasi']);
+Route::post('admin/validasi',[AdminController::class,'cekValidasi']);
 
 Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan']);
 Route::post('admin/tanggapan',[MasyarakatController::class,'cekTanggapan']);

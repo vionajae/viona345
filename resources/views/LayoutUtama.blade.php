@@ -39,14 +39,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url('admin/petugas')}}">Tanggapan</a>
-              </li>
             </ul>
         <form class="d-flex" role="search">
           <div class="d-grid gap-2 d-md-block">
-            <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Login</a>
-            <a class="btn btn-outline-light" href="{{url('admin/registrasi')}}" role="button">Register</a>
             <a class="btn btn-outline-light" href="{{url('admin/login')}}" role="button">Logout</a>
           </div>
         </form>
@@ -60,7 +55,7 @@
         <div class="card-body">
             <form action="" method="post"><br><br><br>
                 <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2>
-                <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4><br><br>
+                <h4>Melayani laporan masyarakat kepada instansi pemerintah berwenang</h4><br><br>
                 <div class="d-grid gap-2 col-3 mx-auto">
                 </div>
                 <br><br>

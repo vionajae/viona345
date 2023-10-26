@@ -58,17 +58,7 @@ class MasyarakatController extends Controller
         return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
     }
 
-    //admin
-    public function adminlogin(){
-        return view('admin.login');
-    }  
-    public function cekadminlogin(Request $request){
-        $m = new Petugas();
-        if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('LayoutUtama');
-        }
-        return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
-    } 
+    
     public function pengaduan(){
         return view('masyarakat.pengaduan');
     }
@@ -76,54 +66,32 @@ class MasyarakatController extends Controller
         $m = new Pengaduan();
         // $cek = $request->validate([
         //     'nik'=>'required|max:16',
-        //     'foto'=>'unique',
-        //     'isi_laporan'=>'required|min:10',
-        //     'tgl_pengaduan'=>'unique'
+        //     'isi_laporan'=>'required',
+        //     'tgl_pengaduan'=>'required'
         // ]);
-        $m->create($request->all());
-        return back()->with('pesan','Selamat, pengaduan terkirim');
-    }
-    public function LayoutUtama(){
-        return view('LayoutUtama');
-    }
+        
+         // siapkan variable untuk menampung file
+         $foto = $request->file('foto');
 
-    public function validasi(){
-        $m = new Pengaduan();
-        return view('Admin.validasi',['data'=>$m->all()]);
-    }
-    public function cekValidasi(Request $request){
-        $m = new Pengaduan();
-        $cek = $request->validate([
-            'nik'=>'required|max:16',
-            'foto'=>'unique',
-            'isi_laporan'=>'required|min:10',
-            'tgl_pengaduan'=>'unique'
-        ]);
-        $m->create($request->all());
+         // tentukan path file akan disimpan
+         $folder = 'upload_data';
+ 
+         // pindahkan file ke target folder
+         $foto->move($folder, $foto->getClientOriginalName());
 
-        return back()->with('pesan','Selamat, validasi berhasil');
-    
+         $m->create([
+            'nik'=>$request->input('nik'),
+            'tgl_pengaduan'=>$request->input('tgl_pengaduan'),
+            'foto'=>$foto->getClientOriginalName(),
+            'isi_laporan'=>$request->input('isi_laporan'),
+            'status'=>'0'
+         ]);
+         return back()->with('pesan','Selamat, pengaduan terkirim');
+
+        
     }
     public function petugasatu(){
         return view('admin.petugas');
-    }
-    public function registrasiadmin(){
-        return view('admin.registrasi');
-    }
-    public function simpanadmin(Request $request){
-        $m = new Petugas();
-        $cek = $request->validate([
-            'nama_petugas'=>'required|max:16',
-            'username'=>'required|min:6',
-            'password'=>'required|min:4',
-            'telp'=>'required|max:13',
-            'level'=>'unique'
-        ]);
-        $m->create($request->all());
-        if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('LayoutUtama');
-        }
-    
     }
     public function cekPetugas(Request $request){
         $m = new Petugas();
@@ -145,15 +113,11 @@ class MasyarakatController extends Controller
     public function cekTanggapan(Request $request){
         $m = new Tanggapan();
         $cek = $request->validate([
-            'id_tanggapan'=>'required|unique:tanggapan|max:16',
-            'id_pengaduan'=>'required|max:16',
             'tgl_tanggapan'=>'required',
-            'id_petugas'=>'required|min:3'
+            'tanggapan'=>'required|min:5'
         ]);
         $m->create($request->all());
-
         return back();
-    
     }
     public function logout(){
         session()->flush();

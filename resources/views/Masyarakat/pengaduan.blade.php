@@ -37,7 +37,7 @@
                         {{session('pesan')}}
                       </div>
                     @endif
-                <form action="{{url('masyarakat/pengaduan')}}" method="post">
+                <form action="{{url('masyarakat/pengaduan')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">NIK</label>

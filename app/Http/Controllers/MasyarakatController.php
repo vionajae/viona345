@@ -81,7 +81,7 @@ class MasyarakatController extends Controller
 
          $m->create([
             'nik'=>$request->input('nik'),
-            'tgl_pengaduan'=>$request->input('tgl_pengaduan'),
+            'tgl_pengaduan'=>date('Y-m-d'),
             'foto'=>$foto->getClientOriginalName(),
             'isi_laporan'=>$request->input('isi_laporan'),
             'status'=>'0'

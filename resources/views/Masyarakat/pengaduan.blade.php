@@ -73,20 +73,9 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="text" class="col-form-label col-2">Tanggal</label>
-                        <div class="col-10">
-                            <input type="date" class="form-control" name="tgl_pengaduan">
-                            @error('tanggal')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="submit">Laporkan</button>
-                      </div>
+                    </div>
                 </form>
             </div>
         </div>

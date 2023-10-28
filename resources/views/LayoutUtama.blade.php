@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Layout Utama</title>
+    <title>@yield('title') | LayoutUtama</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-icons.min.css">
 </head>
 <style>
     h2{
@@ -58,11 +59,63 @@
                 <h4>Melayani laporan masyarakat kepada instansi pemerintah berwenang</h4><br><br>
                 <div class="d-grid gap-2 col-3 mx-auto">
                 </div>
-                <br><br>
             </form>
         </div>
+        <div class="row ">
+          <div class="col-3">
+              <div class="card">
+                  <div class="card-body text-bg-primary bg-gradient">
+                      <div class="row">
+                          <div class="col-auto text-end">
+                              <i class="bi bi-chat-square-text" @style(['font-size:50px'])></i>
+                          </div>
+                          <div class="col-auto justify-content-center align-content-center flex-column d-flex">
+                              <h3 class="h1">100</h3>
+                              <h5 class="h5 text-white">Aduan Masuk</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-3">
+              {{-- Total status proses --}}
+              <div class="card">
+                  <div class="card-body text-bg-info bg-gradient">
+                      <div class="row">
+                          <div class="col-auto text-end">
+                              <i class="bi bi-person-lines-fill" @style(['font-size:50px'])></i>
+                          </div>
+                          <div class="col-auto justify-content-center align-content-center flex-column d-flex">
+                              <h3 class="h1">100</h3>
+                              <h5 class="h5 ">Status Proses</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-3">
+              {{-- Total status selesai --}}
+              <div class="card">
+                  <div class="card-body text-bg-success bg-gradient">
+                      <div class="row">
+                          <div class="col-auto text-end">
+                              <i class="bi bi-check-square-fill" @style(['font-size:50px'])></i>
+                          </div>
+                          <div class="col-auto justify-content-center align-content-center flex-column d-flex">
+                              <h3 class="h1">100</h3>
+                              <h5 class="h5 text-white">Status Selesai</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div><br><br>
+      </div>
     </div>
+    
 </div>
-@yield('isihalaman')
+
+<div class="container-fluid mt-4">
+  @yield('content')
+</div>
 </body>
 </html>

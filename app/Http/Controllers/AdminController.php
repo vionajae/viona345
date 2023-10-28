@@ -31,8 +31,7 @@ class AdminController extends Controller
             'nama_petugas'=>'required|max:16',
             'username'=>'required|min:6',
             'password'=>'required|min:4',
-            'telp'=>'required|max:13',
-            'level'=>'unique'
+            'telp'=>'required|max:13'
         ]);
         $m->create($request->all());
         if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
@@ -52,8 +51,11 @@ class AdminController extends Controller
             'tgl_pengaduan'=>'unique'
         ]);
         $m->create($request->all());
-
         return back()->with('pesan','Selamat, validasi berhasil');
-    
+    }
+    public function logout(){
+        session()->flush();
+        return back();
     }
 }
+

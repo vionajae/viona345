@@ -38,7 +38,6 @@ Route::get('logout',[MasyarakatController::class,'logout']);
 
 // layout
 Route::get('layoutmasyarakat',[MasyarakatController::class,'layoutmasyarakat']);
-
 Route::get('LayoutUtama',[AdminController::class,'LayoutUtama']);
 
 
@@ -54,4 +53,5 @@ Route::post('admin/validasi',[AdminController::class,'cekValidasi']);
 
 Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan']);
 Route::post('admin/tanggapan',[MasyarakatController::class,'cekTanggapan']);
+
 

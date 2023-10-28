@@ -86,26 +86,9 @@ class MasyarakatController extends Controller
             'isi_laporan'=>$request->input('isi_laporan'),
             'status'=>'0'
          ]);
-         return back()->with('pesan','Selamat, pengaduan terkirim');
+         return back()->with('pesan','Selamat, laporan terkirim');
 
         
-    }
-    public function petugasatu(){
-        return view('admin.petugas');
-    }
-    public function cekPetugas(Request $request){
-        $m = new Petugas();
-        $cek = $request->validate([
-            'nama_petugas'=>'required|max:16',
-            'username'=>'required|min:6',
-            'password'=>'required|min:4',
-            'telp'=>'required|max:13',
-            'level'=>'required|max:10'
-        ]);
-        $m->create($request->all());
-
-        return back()->with('pesan','Selamat, validasi berhasil');
-    
     }
     public function tanggapan(){
         return view('admin.tanggapan');

@@ -72,7 +72,6 @@
                                         <i class="bi bi-plus-circle-fill"></i> Tanggapi
                                         </a>
                                     </td>
-                                    
                                 </tr>
                                 @endforeach
                             </tbody>

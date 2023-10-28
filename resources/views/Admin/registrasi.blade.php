@@ -50,7 +50,7 @@
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Password</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="password">
+                            <input type="password" class="form-control" name="password">
                             @error('password')
                                 <div class="form-text">
                                     {{$message}}
@@ -72,9 +72,9 @@
                     <div class="mb-3 row">
                         <label for="" class="col-form-label col-2">Level</label>
                         <div class="col-10">
-                        <select class="form-select" id="validationCustom04" required>
-                          <option>Admin</option>
-                          <option>Petugas</option>
+                        <select class="form-select" id="validationCustom04" name="level" required>
+                          <option value="admin">Admin</option>
+                          <option value="petugas">Petugas</option>
                         </select>
                         @error('level')
                                 <div class="form-text">

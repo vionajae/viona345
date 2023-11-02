@@ -55,6 +55,7 @@
                                 <tr>
                                     <th>NIK</th>
                                     <th>Foto</th>
+                                    <th>Status</th>
                                     <th>Isi Laporan</th>
                                     <th>Tanggal</th>
                                     <th></th>
@@ -65,6 +66,7 @@
                                 <tr>
                                     <td>{{$inem->nik}}</td>
                                     <td><img src="/upload_data/{{$inem->foto}}" alt="" style="width: 50px"></td>
+                                    <td>{{$inem->status}}</td>
                                     <td>{{$inem->isi_laporan}}</td>
                                     <td>{{$inem->tgl_pengaduan}}</td>
                                     <td>                                   

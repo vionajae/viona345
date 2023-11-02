@@ -59,6 +59,7 @@
             </form>
         </div>
     </div>
+    
 </div>
 @yield('isihalaman')
 </body>

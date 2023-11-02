@@ -15,13 +15,13 @@
                     <h4 class="h4">Daftarkan diri anda</h4>
 
                     @if (session('pesan'))
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-primary" role="alert">
                         {{session('pesan')}}
                       </div>
                     @endif
                     {{-- pesan jika validasi gagal --}}
                     @if ($errors->any())
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         Gagal registrasi
                       </div>
                     @endif

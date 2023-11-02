@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Middleware\MasyarakatMiddleware;
+use App\Http\Middleware\Validasiadmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,11 +36,11 @@ Route::post('masyarakat/pengaduan',[MasyarakatController::class,'cekPengaduan'])
 
 //logout
 Route::get('logout',[MasyarakatController::class,'logout']);
+Route::get('logout',[AdminController::class,'logout']);
 
 // layout
 Route::get('layoutmasyarakat',[MasyarakatController::class,'layoutmasyarakat']);
-Route::get('LayoutUtama',[AdminController::class,'LayoutUtama']);
-
+Route::get('LayoutUtama',[AdminController::class,'LayoutUtama'])->middleware(Validasiadmin::class);
 
 //admin
 Route::get('admin/login',[AdminController::class,'adminlogin']);
@@ -53,5 +54,3 @@ Route::post('admin/validasi',[AdminController::class,'cekValidasi']);
 
 Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan']);
 Route::post('admin/tanggapan',[MasyarakatController::class,'cekTanggapan']);
-
-

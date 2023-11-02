@@ -13,11 +13,13 @@ class AdminController extends Controller
         return view('admin.login');
     }
     public function cekadminlogin(Request $request){
-        $m = new Petugas();
-        if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('LayoutUtama');
+        $p = new petugas();
+        if($p->where('username',$request->input('username'))->where('password',$request->input('password')) ->exists()){
+         $petugas = $p->first();
+            session(['petugas'=>$petugas]);
+         return redirect('petugas');
         }
-        return back()->with('pesan','Username dan password tidak terdaftar hyung noona');
+        return back()->with('pesan','username dan password belum terdaftar kakak');
     } 
     public function LayoutUtama(){
         return view('LayoutUtama');
@@ -35,7 +37,7 @@ class AdminController extends Controller
         ]);
         $m->create($request->all());
         if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
-            return redirect('LayoutUtama');
+            return back()->with('pesan','registrasi berhasil');
         }
     }
     public function validasi(){
@@ -58,4 +60,3 @@ class AdminController extends Controller
         return back();
     }
 }
-

@@ -41,7 +41,7 @@ class MasyarakatController extends Controller
         ]);
         $satu->create($request->all());
         if ($satu->where('nik',$request->input('nik'))->where('username',$request->input('username'))->exists()){
-            return redirect('layoutmasyarakat');
+            return back()->with('pesan','registrasi berhasil');
         }
         return back()->with('pesan','registrasi gagal');
     }

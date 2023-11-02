@@ -18,7 +18,7 @@
             </div>
             <div class="card-body">
                 @if (session('pesan'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-primary" role="alert">
                         {{session('pesan')}}
                       </div>
                     @endif

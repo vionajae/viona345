@@ -53,6 +53,7 @@ class MasyarakatController extends Controller
         $m = new Masyarakat();
         // cek username dan password exist (ada) di tabel masyarakat
         if ($m->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
+            session(['username'=>$request->input('username')]);
             return redirect('layoutmasyarakat');
         }
         return back()->with('pesan','Username dan password tidak terdaftar hyung noona');

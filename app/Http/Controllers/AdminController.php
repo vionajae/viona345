@@ -17,7 +17,7 @@ class AdminController extends Controller
         if($p->where('username',$request->input('username'))->where('password',$request->input('password')) ->exists()){
          $petugas = $p->first();
             session(['petugas'=>$petugas]);
-         return redirect('petugas');
+         return redirect('LayoutUtama');
         }
         return back()->with('pesan','username dan password belum terdaftar kakak');
     } 

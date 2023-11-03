@@ -46,7 +46,7 @@ Route::get('LayoutUtama',[AdminController::class,'LayoutUtama'])->middleware(Val
 Route::get('admin/login',[AdminController::class,'adminlogin']);
 Route::post('admin/login',[AdminController::class,'cekadminlogin']);
 
-Route::get('admin/registrasi',[AdminController::class,'registrasiadmin']);
+Route::get('admin/registrasi',[AdminController::class,'registrasiadmin'])->middleware(Validasiadmin::class);
 Route::post('admin/registrasi',[AdminController::class,'simpanadmin']);
 
 Route::get('admin/validasi',[AdminController::class,'validasi'])->middleware(Validasiadmin::class);

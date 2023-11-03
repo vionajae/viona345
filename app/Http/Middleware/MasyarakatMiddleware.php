@@ -15,6 +15,9 @@ class MasyarakatMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(!session('username')){
+            return redirect('/layoutmasyarakat');
+        }
         return $next($request);
     }
 }

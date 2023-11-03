@@ -39,7 +39,7 @@ Route::get('logout',[MasyarakatController::class,'logout']);
 Route::get('logout',[AdminController::class,'logout']);
 
 // layout
-Route::get('layoutmasyarakat',[MasyarakatController::class,'layoutmasyarakat']);
+Route::get('layoutmasyarakat',[MasyarakatController::class,'layoutmasyarakat'])->middleware;
 Route::get('LayoutUtama',[AdminController::class,'LayoutUtama'])->middleware(Validasiadmin::class);
 
 //admin
@@ -49,8 +49,8 @@ Route::post('admin/login',[AdminController::class,'cekadminlogin']);
 Route::get('admin/registrasi',[AdminController::class,'registrasiadmin']);
 Route::post('admin/registrasi',[AdminController::class,'simpanadmin']);
 
-Route::get('admin/validasi',[AdminController::class,'validasi']);
+Route::get('admin/validasi',[AdminController::class,'validasi'])->middleware(Validasiadmin::class);
 Route::post('admin/validasi',[AdminController::class,'cekValidasi']);
 
-Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan']);
+Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan'])->middleware(Validasiadmin::class);
 Route::post('admin/tanggapan',[MasyarakatController::class,'cekTanggapan']);

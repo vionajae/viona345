@@ -54,8 +54,8 @@
                 <h4>Sampaikan laporan anda langsung kepada instansi pemerintah berwenang</h4>
                 <div class="d-grid gap-2 col-3 mx-auto">
                   <a class="btn btn-primary" href="{{url('masyarakat/pengaduan')}}" role="button">Buat Pengaduan</a>
-                </div>
-                <br><br>
+                </div><br>
+                <br><br><br>
             </form>
         </div>
     </div>

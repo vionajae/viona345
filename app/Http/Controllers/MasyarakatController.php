@@ -91,23 +91,7 @@ class MasyarakatController extends Controller
 
         
     }
-    public function tanggapan(){
-        return view('admin.tanggapan');
-    }
-    public function cekTanggapan(Request $request){
-        $m = new Tanggapan();
-        $cek = $request->validate([
-            'tgl_tanggapan'=>'required',
-            'tanggapan'=>'required|min:5'
-        ]);
-        $m->create($request->all());
-        return back();
-    }
-    public function logout(){
-        session()->flush();
-        return back();
-    }
-
+    
 }
 
     

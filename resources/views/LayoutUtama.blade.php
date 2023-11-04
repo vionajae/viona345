@@ -40,6 +40,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/tanggapan')}}">Tanggapan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/laporan')}}">Laporan</a>
+              </li>
             </ul>
         <form class="d-flex" role="search">
           <div class="d-grid gap-2 d-md-block">
@@ -54,13 +60,13 @@
         <div class="bg-gradient justify-content-between">
         </div>
         <div class="card-body">
-            <form action="" method="post"><br>
+            <form action="" method="post"><br><br><br>
                 <h2>Layanan Aspirasi dan Pengaduan Online Rakyat</h2>
                 <h4>Melayani laporan masyarakat kepada instansi pemerintah berwenang</h4>
                 <div class="d-grid gap-2 col-3 mx-auto">
                 </div>
             </form>
-        </div>
+        </div><br>
         <div class="row">
           <div class="col-3 ms-2">
               <div class="card">
@@ -118,7 +124,7 @@
                   </div>
               </div>
           </div>
-      </div>
+      </div><br>
     </div>
 </div>
 <div class="container-fluid mt-4">

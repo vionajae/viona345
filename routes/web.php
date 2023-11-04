@@ -51,6 +51,11 @@ Route::post('admin/registrasi',[AdminController::class,'simpanadmin']);
 
 Route::get('admin/validasi',[AdminController::class,'validasi'])->middleware(Validasiadmin::class);
 Route::post('admin/validasi',[AdminController::class,'cekValidasi']);
+Route::get('status/{id}',[AdminController::class,'status']);
 
-Route::get('admin/tanggapan',[MasyarakatController::class,'tanggapan'])->middleware(Validasiadmin::class);
-Route::post('admin/tanggapan',[MasyarakatController::class,'cekTanggapan']);
+
+Route::get('admin/tanggapan',[AdminController::class,'tanggapan'])->middleware(Validasiadmin::class);
+Route::post('admin/tanggapan',[AdminController::class,'cekTanggapan']);
+
+Route::get('admin/laporan',[AdminController::class,'laporan'])->middleware(Validasiadmin::class);
+Route::post('admin/laporan',[AdminController::class,'ceklaporan']);

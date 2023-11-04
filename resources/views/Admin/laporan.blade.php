@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validasi</title>
+    <title>Laporan</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/icons/bootstrap-icons.min.css">
 </head>
@@ -52,7 +52,7 @@
                 <form action="" method="post">
                     @csrf
                     <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
-                        <h4 class="card-title">Data</h4>
+                        <h4 class="card-title">Laporan</h4>
                         
                     </div>
                     <div class="card-body">
@@ -64,7 +64,6 @@
                                     <th>Isi Laporan</th>
                                     <th>Tanggal</th>
                                     <th>Status</th>
-                                    <th>Validasi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,11 +84,6 @@
                                         @default
                                             Tertunda
                                     @endswitch</td>
-                                    <td>                                   
-                                        <a href="{{url('status/'.$inem->id_pengaduan)}}" class="btn btn-primary">
-                                        <i class="bi bi-plus-circle-fill"></i> Validasi
-                                        </a>
-                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

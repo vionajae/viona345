@@ -19,6 +19,15 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('LayoutUtama')}}">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/validasi')}}">Validasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/tanggapan')}}">Tanggapan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('admin/laporan')}}">Laporan</a>
+              </li>
             </ul>
     <form class="d-flex" role="search">
       <button class="btn btn-outline-light" type="submit">Logout</button>

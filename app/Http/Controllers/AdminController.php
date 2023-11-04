@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengaduan;
 use App\Models\Petugas;
+use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -55,8 +56,41 @@ class AdminController extends Controller
         $m->create($request->all());
         return back()->with('pesan','Selamat, validasi berhasil');
     }
+    public function tanggapan(){
+        $m = new Tanggapan();
+        return view('admin.tanggapan',['data'=>$m->all()]);
+    }
+    public function cekTanggapan(Request $request){
+        $m = new Tanggapan();
+        $cek = $request->validate([
+            'tgl_pengaduan'=>date('Y-m-d'),
+            'tanggapan'=>'required|min:5'
+        ]);
+        $m->create($request->all());
+        return back();
+    }
     public function logout(){
         session()->flush();
+        return back();
+    }
+    public function status($id){
+        $lapor = new Pengaduan();
+        $lapor->find($id)->update(['status'=>'proses']);
+        return back();
+    }
+    public function laporan(){
+        $m = new Pengaduan();
+        return view('admin.laporan',['data'=>$m->all()]);
+    }
+    public function ceklaporan(Request $request){
+        $m = new Pengaduan();
+        $cek = $request->validate([
+            'nik'=>'required|max:16',
+            'foto'=>'unique',
+            'isi_laporan'=>'required|min:10',
+            'tgl_pengaduan'=>'unique'
+        ]);
+        $m->create($request->all());
         return back();
     }
 }
